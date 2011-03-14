@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * File config.xml
+ * Created: 14.03.2011
+ *
+ * Disqus integratation to magento e-commerce platform.
+ * Adding comments box for all product page.
+ *
+ * @category    Involic
+ * @package     Involic_Disqus
+ * @copyright   Copyright (c) 2011 by Involic (http://www.involic.com)
+ */
+ -->
+<config>
+    <modules>
+        <Involic_Disqus>
+            <version>1.0.0</version>
+        </Involic_Disqus>
+    </modules>
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <disqus translate="title" >
+                                            <title>DISQUS Integration Settings</title>
+                                            <sort_order>80</sort_order>
+                                        </disqus>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <frontend>
+        <layout>
+            <updates>
+                <disqus>
+                    <file>disqus.xml</file>
+                </disqus>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <resources>
+            <disqus_setup>
+                <setup>
+                    <module>Involic_Disqus</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </disqus_setup>
+            <disqus_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </disqus_write>
+            <disqus_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </disqus_read>
+        </resources>
+        <blocks>
+            <disqus>
+                <class>Involic_Disqus_Block</class>
+            </disqus>
+        </blocks>
+        <models>
+            <disqus>
+                <class>Involic_Disqus_Model</class>
+                <resourceModel>disqus_mysql4</resourceModel>
+            </disqus>
+            <disqus_mysql4>
+                <class>Involic_Disqus_Model_Mysql4</class>
+            </disqus_mysql4>
+        </models>
+        <helpers>
+            <disqus>
+                <class>Involic_Disqus_Helper</class>
+            </disqus>
+        </helpers>
+    </global>
+    <default>
+        <disqus>
+            <general>
+                <disqus_debug_mode>0</disqus_debug_mode>
+            </general>
+        </disqus>
+    </default>
+</config>
