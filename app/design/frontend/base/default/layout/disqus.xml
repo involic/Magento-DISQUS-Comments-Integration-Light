@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <catalog_product_view translate="label">
+        <!-- Involic_Disqus -->
+        <reference name="product.info.additional">
+            <block type="disqus/product_comments"
+                   name="disqus_product_comments"
+                   after="product_tag_list"
+                   template="disqus/product_comments.phtml" />
+        </reference>
+    </catalog_product_view>
+</layout>
+
+
