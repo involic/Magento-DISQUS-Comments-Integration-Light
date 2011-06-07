@@ -31,7 +31,7 @@
         </involic>
     </tabs>
     <sections>
-        <disqus translate="label" module="testimonials">
+        <disqus translate="label">
             <class>separator-top</class>
             <label>DISQUS Integration </label>
             <tab>involic</tab>
